@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
@@ -10,8 +10,6 @@ import FeaturedProducts from "@/components/home/FeaturedProducts";
 import { mockBanners } from "@/data/mock-data";
 
 const HomePage = () => {
-  const [showSearch, setShowSearch] = useState(false);
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,17 +20,17 @@ const HomePage = () => {
         {/* Search Bar */}
         <div className="relative">
           <Link to="/search" className="w-full">
-            <div className="relative">
-              <Input
-                type="text"
-                placeholder="Search electronics..."
-                className="pl-10 bg-white"
-                readOnly
-              />
-              <Search 
-                size={18} 
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" 
-              />
+            <div className="relative bg-brand-blue rounded-lg shadow-sm flex items-center h-12 overflow-hidden">
+              <div className="bg-white flex-grow flex items-center ml-1 rounded-md h-10">
+                <Search 
+                  size={18} 
+                  className="absolute left-3 text-gray-500" 
+                />
+                <div className="pl-10 py-2 text-gray-500">Search electronics...</div>
+              </div>
+              <div className="p-2 text-white text-xs">
+                Search
+              </div>
             </div>
           </Link>
         </div>
