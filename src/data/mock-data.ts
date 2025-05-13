@@ -1,15 +1,46 @@
-
 import { Product, Category } from "@/types/product";
 
 export const mockCategories: Category[] = [
-  { id: "cat1", name: "Microcontrollers", icon: "https://placehold.co/60x60/1a46e5/white?text=MC" },
-  { id: "cat2", name: "RF Modules", icon: "https://placehold.co/60x60/1a46e5/white?text=RF" },
-  { id: "cat3", name: "Sensors", icon: "https://placehold.co/60x60/1a46e5/white?text=S" },
-  { id: "cat4", name: "Raspberry Pi", icon: "https://placehold.co/60x60/1a46e5/white?text=Pi" },
-  { id: "cat5", name: "Power Supplies", icon: "https://placehold.co/60x60/1a46e5/white?text=PS" },
-  { id: "cat6", name: "Development Boards", icon: "https://placehold.co/60x60/1a46e5/white?text=DB" },
-  { id: "cat7", name: "LED & Displays", icon: "https://placehold.co/60x60/1a46e5/white?text=LED" },
-  { id: "cat8", name: "IoT Modules", icon: "https://placehold.co/60x60/1a46e5/white?text=IoT" },
+  { 
+    id: "cat1", 
+    name: "Microcontrollers", 
+    icon: "https://images.unsplash.com/photo-1553406830-ef2513450d76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1pY3JvY29udHJvbGxlcnxlbnwwfHwwfHx8MA%3D%3D" 
+  },
+  { 
+    id: "cat2", 
+    name: "RF Modules", 
+    icon: "https://images.unsplash.com/photo-1592664474898-99c9d44a3cee?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2lyZWxlc3MlMjBtb2R1bGV8ZW58MHx8MHx8fDA%3D" 
+  },
+  { 
+    id: "cat3", 
+    name: "Sensors", 
+    icon: "https://images.unsplash.com/photo-1581092921461-eab10380dmk?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2Vuc29yfGVufDB8fDB8fHww" 
+  },
+  { 
+    id: "cat4", 
+    name: "Raspberry Pi", 
+    icon: "https://images.unsplash.com/photo-1580246554356-6a35f1c5545f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFzcGJlcnJ5JTIwcGl8ZW58MHx8MHx8fDA%3D" 
+  },
+  { 
+    id: "cat5", 
+    name: "Power Supplies", 
+    icon: "https://images.unsplash.com/photo-1607148029592-ff2c25b6118c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG93ZXIlMjBzdXBwbHl8ZW58MHx8MHx8fDA%3D" 
+  },
+  { 
+    id: "cat6", 
+    name: "Development Boards", 
+    icon: "https://images.unsplash.com/photo-1603732551681-2e91159b9dc2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGV2ZWxvcG1lbnQlMjBib2FyZHxlbnwwfHwwfHx8MA%3D%3D" 
+  },
+  { 
+    id: "cat7", 
+    name: "LED & Displays", 
+    icon: "https://images.unsplash.com/photo-1520869578617-6b3a7d8319d5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGVkJTIwZGlzcGxheXxlbnwwfHwwfHx8MA%3D%3D" 
+  },
+  { 
+    id: "cat8", 
+    name: "IoT Modules", 
+    icon: "https://images.unsplash.com/photo-1560661184-a75ae1bd5895?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGludGVybmV0JTIwb2YlMjB0aGluZ3N8ZW58MHx8MHx8fDA%3D" 
+  },
 ];
 
 export const mockProducts: Product[] = [
@@ -189,19 +220,19 @@ export const mockBanners = [
   {
     id: "banner1",
     title: "Summer Sale - 20% Off All Arduino Products",
-    image: "https://placehold.co/800x350/1a46e5/white?text=Arduino+Sale",
+    image: "https://images.unsplash.com/photo-1597444153637-55edf2d3d1ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFyZHVpbm98ZW58MHx8MHx8fDA%3D",
     url: "/category/cat1"
   },
   {
     id: "banner2",
     title: "New Raspberry Pi 5 - Coming Soon",
-    image: "https://placehold.co/800x350/e51a46/white?text=New+Raspberry+Pi",
+    image: "https://images.unsplash.com/photo-1580050163344-46eb3b56b8bf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFzcGJlcnJ5JTIwcGl8ZW58MHx8MHx8fDA%3D",
     url: "/category/cat4"
   },
   {
     id: "banner3",
     title: "IoT Starter Kits - Perfect for Beginners",
-    image: "https://placehold.co/800x350/46e51a/white?text=IoT+Starter+Kits",
+    image: "https://images.unsplash.com/photo-1623282033815-40b05d96c903?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGludGVybmV0JTIwb2YlMjB0aGluZ3N8ZW58MHx8MHx8fDA%3D",
     url: "/category/cat8"
   }
 ];

@@ -20,9 +20,9 @@ const CategoryGrid = () => {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold">Categories</h2>
+        <h2 className="text-xl font-semibold dark:text-white">Categories</h2>
         <Link to="/categories">
-          <Button variant="ghost" size="sm" className="text-brand-blue group">
+          <Button variant="ghost" size="sm" className="text-brand-blue group dark:text-brand-light-blue dark:hover:bg-gray-800">
             View all
             <ArrowRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
           </Button>

@@ -70,6 +70,7 @@ export default {
 				},
 				surface: {
 					light: '#f5f7fa',
+					dark: '#121212',
 					DEFAULT: '#ffffff'
 				}
 			},

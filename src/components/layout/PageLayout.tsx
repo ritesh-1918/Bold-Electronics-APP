@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import BottomNavigation from "@/components/navigation/BottomNavigation";
 import TopBar from "@/components/navigation/TopBar";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/hooks/use-theme";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -25,8 +26,13 @@ const PageLayout = ({
   className,
   fullWidth = false,
 }: PageLayoutProps) => {
+  const { theme } = useTheme();
+  
   return (
-    <div className="flex flex-col min-h-screen bg-surface-light">
+    <div className={cn(
+      "flex flex-col min-h-screen",
+      theme === "dark" ? "bg-gray-900 text-white" : "bg-surface-light"
+    )}>
       <TopBar 
         title={title} 
         showBack={showBack} 
