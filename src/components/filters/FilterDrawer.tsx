@@ -103,6 +103,11 @@ const FilterDrawer = ({
     onClose();
   };
   
+  // Function to handle slider value change with proper typing
+  const handlePriceRangeChange = (value: number[]) => {
+    setPriceRange(value as [number, number]);
+  };
+  
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent side="right" className={theme === "dark" ? "bg-gray-900 text-white border-gray-800" : ""}>
@@ -133,7 +138,7 @@ const FilterDrawer = ({
                   max={1000}
                   step={10}
                   value={priceRange}
-                  onValueChange={setPriceRange}
+                  onValueChange={handlePriceRangeChange}
                   className="mb-6"
                 />
                 <div className="flex items-center justify-between">

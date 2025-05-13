@@ -8,7 +8,8 @@ interface BannerItem {
   id: string;
   image: string;
   title: string;
-  url: string;
+  url?: string;
+  link?: string;
 }
 
 interface BannerProps {

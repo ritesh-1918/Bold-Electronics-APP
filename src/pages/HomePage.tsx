@@ -17,21 +17,21 @@ const enhancedBanners = [
     title: "New Arduino Kits",
     description: "Start your electronics journey with our starter kits",
     image: "https://cdn.sparkfun.com//assets/parts/1/8/8/00/17523-SparkFun_Inventors_Kit_-_v4.1-01.jpg",
-    link: "/category/arduino"
+    url: "/category/arduino"  // Changed from link to url to match BannerItem interface
   },
   {
     id: "2",
     title: "Raspberry Pi 5 Available",
     description: "Get the latest and most powerful Pi yet",
     image: "https://cdn.sparkfun.com//assets/parts/1/9/6/3/3/19526-Raspberry_Pi_5-Feature.jpg",
-    link: "/product/raspberry-pi-5"
+    url: "/product/raspberry-pi-5"  // Changed from link to url
   },
   {
     id: "3",
     title: "IoT Starter Kit",
     description: "Build smart projects with our complete IoT kit",
     image: "https://cdn.sparkfun.com//assets/parts/1/6/2/3/2/17160-SparkFun_Inventor_s_Kit_for_RedBot-08.jpg",
-    link: "/product/iot-starter-kit"
+    url: "/product/iot-starter-kit"  // Changed from link to url
   }
 ];
 

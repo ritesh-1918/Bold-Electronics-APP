@@ -60,7 +60,7 @@ const CategoryPage = () => {
       
       // Filter by in stock
       if (activeFilters.inStock) {
-        results = results.filter(product => product.inStock);
+        results = results.filter(product => product.stock > 0 || product.inStock === true);
       }
       
       // Filter by on sale
@@ -71,7 +71,7 @@ const CategoryPage = () => {
       // Filter by brands
       if (activeFilters.brands.length > 0) {
         results = results.filter(product => 
-          activeFilters.brands.includes(product.brand || '')
+          product.brand && activeFilters.brands.includes(product.brand)
         );
       }
       
@@ -84,7 +84,11 @@ const CategoryPage = () => {
           results.sort((a, b) => b.price - a.price);
           break;
         case 'newest':
-          results.sort((a, b) => new Date(b.dateAdded || 0).getTime() - new Date(a.dateAdded || 0).getTime());
+          results.sort((a, b) => {
+            const dateA = a.dateAdded ? new Date(a.dateAdded).getTime() : 0;
+            const dateB = b.dateAdded ? new Date(b.dateAdded).getTime() : 0;
+            return dateB - dateA;
+          });
           break;
         case 'best-rated':
           results.sort((a, b) => (b.rating || 0) - (a.rating || 0));

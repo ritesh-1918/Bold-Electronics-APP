@@ -8,6 +8,10 @@ export interface Product {
   categoryId: string;
   rating: number;
   stock: number;
+  inStock?: boolean;
+  salePrice?: number;
+  brand?: string;
+  dateAdded?: string | number | Date;
   specs: Record<string, string | number>;
 }
 
