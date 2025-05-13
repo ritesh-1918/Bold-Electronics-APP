@@ -1,10 +1,13 @@
 
-import { ArrowLeft, Search, ShoppingCart } from "lucide-react";
+import { ArrowLeft, Search, ShoppingCart, Sun, Moon } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/hooks/use-cart";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/shared/Logo";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/use-theme";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface TopBarProps {
   title?: string;
@@ -21,30 +24,38 @@ const TopBar = ({
 }: TopBarProps) => {
   const navigate = useNavigate();
   const { cartItemsCount } = useCart();
+  const { theme, setTheme } = useTheme();
   
   const handleBack = () => {
     navigate(-1);
   };
   
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+  
   return (
-    <header className="sticky top-0 z-40 bg-white border-b">
+    <header className={cn("sticky top-0 z-40 border-b", 
+      theme === "dark" ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200")}>
       <div className={cn(
-        "h-16 flex items-center justify-between px-4",
+        "h-14 flex items-center justify-between px-4",
         title ? "container-mobile" : ""
       )}>
         <div className="flex items-center">
           {showBack && (
             <button 
               onClick={handleBack}
-              className="p-2 -ml-2 mr-1 rounded-full hover:bg-gray-100"
+              className={cn("p-2 -ml-2 mr-1 rounded-full", 
+                theme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-100")}
               aria-label="Go back"
             >
-              <ArrowLeft size={20} />
+              <ArrowLeft size={18} />
             </button>
           )}
           
           {title ? (
-            <h1 className="font-semibold text-lg truncate">{title}</h1>
+            <h1 className={cn("font-semibold text-base truncate", 
+              theme === "dark" ? "text-white" : "text-gray-900")}>{title}</h1>
           ) : (
             <Link to="/" className="flex items-center">
               <Logo size="small" />
@@ -52,16 +63,37 @@ const TopBar = ({
           )}
         </div>
         
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-1">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button 
+                  onClick={toggleTheme} 
+                  variant="ghost" 
+                  size="icon" 
+                  className={cn("rounded-full", 
+                    theme === "dark" ? "text-gray-200 hover:bg-gray-800" : "text-gray-700 hover:bg-gray-100")}
+                >
+                  {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Switch to {theme === 'dark' ? 'light' : 'dark'} mode</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          
           {showSearch && (
-            <Link to="/search" className="p-2 rounded-full hover:bg-gray-100">
-              <Search size={20} />
+            <Link to="/search" className={cn("p-2 rounded-full", 
+              theme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-100")}>
+              <Search size={18} />
             </Link>
           )}
           
           {showCart && (
-            <Link to="/cart" className="p-2 rounded-full hover:bg-gray-100 relative">
-              <ShoppingCart size={20} />
+            <Link to="/cart" className={cn("p-2 rounded-full relative", 
+              theme === "dark" ? "hover:bg-gray-800" : "hover:bg-gray-100")}>
+              <ShoppingCart size={18} />
               {cartItemsCount > 0 && (
                 <Badge 
                   variant="destructive" 

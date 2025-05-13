@@ -4,6 +4,7 @@ import BottomNavigation from "@/components/navigation/BottomNavigation";
 import TopBar from "@/components/navigation/TopBar";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/hooks/use-theme";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -27,11 +28,12 @@ const PageLayout = ({
   fullWidth = false,
 }: PageLayoutProps) => {
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
   
   return (
     <div className={cn(
-      "flex flex-col min-h-screen",
-      theme === "dark" ? "bg-gray-900 text-white" : "bg-surface-light"
+      "flex flex-col min-h-screen transition-colors duration-200",
+      theme === "dark" ? "bg-gray-900 text-gray-100" : "bg-surface-light text-gray-900"
     )}>
       <TopBar 
         title={title} 
@@ -41,8 +43,9 @@ const PageLayout = ({
       />
       
       <main className={cn(
-        "flex-1 pb-20",
-        !fullWidth && "container-mobile",
+        "flex-1",
+        isMobile ? "pb-16" : "pb-8",
+        !fullWidth && "container-mobile md:max-w-4xl",
         className
       )}>
         {children}
